@@ -1,0 +1,78 @@
+[build-system]
+requires = ["hatchling>=1.8.0"]
+build-backend = "hatchling.build"
+
+
+[project]
+name = "flexi_prompt"
+version = "0.1.0"
+description = "A flexible prompt builder for AI applications"
+readme = "README.md"
+requires-python = ">=3.8"
+license = "MIT"
+authors = [
+    { name = "Dmitrii Minaev", email = "dmitriy.minaev.v@gmail.com" },
+]
+
+[project.urls]
+Homepage = "https://github.com/yourusername/flexi_prompt"
+Repository = "https://github.com/yourusername/flexi_prompt.git"
+
+
+[tool.hatch.build.targets.wheel]
+packages = ["flexi_prompt"]
+
+[tool.hatch.build.targets.sdist]
+include = ["/flexi_prompt"]
+
+
+[tool.ruff]
+fix = true
+output-format = "github"
+
+[tool.ruff.lint]
+exclude = ["tests/**"]
+select = [
+  "ASYNC", # flake8-async
+  "C4",    # flake8-comprehensions
+  "C90",   # McCabe cyclomatic complexity
+  "E501",  # Long lines
+  "EXE",   # flake8-executable
+  "F",     # Pyflakes
+  "INT",   # flake8-gettext
+  "PERF",  # Perflint
+  "PL",    # Pylint
+  "Q",     # flake8-quotes
+  "SIM",   # flake8-simplify
+  "SLOT",  # flake8-slots
+  "T10",   # flake8-debugger
+  "W",     # pycodestyle
+  "YTT",   # flake8-2020
+  "I",     # isort
+  # built-in shadowing
+  "A001", # builtin-variable-shadowing
+  "A002", # builtin-argument-shadowing
+  "A003", # builtin-attribute-shadowing
+  # docstring rules
+  "D102", # Missing docstring in public method
+  "D103", # Missing docstring in public function
+  "D209", # Closing triple quotes go to new line
+  "D205", # 1 blank line required between summary line and description
+  "D213", # summary lines must be positioned on the second physical line of the docstring
+  "D417", # undocumented-parameter
+  "D419", # undocumented-returns
+]
+
+ignore = [
+  "F401",    # unused-import
+  "PERF203", # `try`-`except` within a loop incurs performance overhead
+  "PERF401", # Use a list comprehension to create a transformed list
+  "PLR1714", # repeated-equality-comparison
+  "PLR5501", # collapsible-else-if
+  "PLW0603", # global-statement
+  "PLW1510", # subprocess-run-without-check
+  "PLW2901", # redefined-loop-name
+  "SIM108",  # if-else-block-instead-of-if-exp
+  "SIM115",  # open-file-with-context-handler
+  "SIM118",  # in-dict-keys
+]
