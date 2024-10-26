@@ -31,7 +31,7 @@ fix = true
 output-format = "github"
 
 [tool.ruff.lint]
-exclude = ["tests/**"]
+exclude = ["tests/**", "examples/**"]
 select = [
   "ASYNC", # flake8-async
   "C4",    # flake8-comprehensions
