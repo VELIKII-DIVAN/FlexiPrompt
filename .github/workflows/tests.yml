@@ -20,6 +20,6 @@ jobs:
 
             - name: Check linting
               run: hatch fmt
-            
+      
             - name: Run tests
               run: hatch test
