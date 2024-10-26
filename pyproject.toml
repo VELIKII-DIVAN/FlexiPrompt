@@ -15,8 +15,8 @@ authors = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/VELIKII-DIVAN/flexi_prompt"
-Repository = "https://github.com/VELIKII-DIVAN/flexi_prompt.git"
+Homepage = "https://github.com/VELIKII-DIVAN/FlexiPrompt"
+Repository = "https://github.com/VELIKII-DIVAN/FlexiPrompt.git"
 
 
 [tool.hatch.build.targets.wheel]
