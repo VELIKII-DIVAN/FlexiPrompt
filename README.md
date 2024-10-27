@@ -7,7 +7,7 @@ FlexiPrompt is a flexible and powerful templating library, allowing you to creat
 To install FlexiPrompt, you can use pip. First, ensure you have Python 3.12 or later installed.
 
 ```bash
-pip install flexi_prompt
+pip install flexi-prompt
 ```
 
 Alternatively, you can build and install the project from the source by running:
@@ -81,6 +81,24 @@ try:
     fp.greeting().build()
 except ValueError as e:
     print(e)  # Output: Template recursion detected
+```
+
+### All in one
+
+```python
+from flexi_prompt import FlexiPrompt
+
+fp = FlexiPrompt()
+inner_fp = FlexiPrompt({"another_field1": "nested value1, "})
+inner_fp.another_field2 = "nested value2"
+
+fp.final_prompt = "Here is: $inner_fp, $some_field, $some_callback"
+fp.inner_fp = inner_fp
+fp.some_field = 42
+fp.some_callback = input  # For example input = "user input"
+
+print(fp.final_prompt().build())  
+# Here is: nested value1, nested value2, 42, user input
 ```
 
 ## Features
