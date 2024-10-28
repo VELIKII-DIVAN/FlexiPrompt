@@ -91,6 +91,7 @@ from flexi_prompt import FlexiPrompt
 fp = FlexiPrompt()
 inner_fp = FlexiPrompt({"another_field1": "nested value1, "})
 inner_fp.another_field2 = "nested value2"
+inner_fp.another_field1().another_field2()
 
 fp.final_prompt = "Here is: $inner_fp, $some_field, $some_callback"
 fp.inner_fp = inner_fp
